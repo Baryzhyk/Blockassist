@@ -18,19 +18,47 @@ NC='\033[0m' # Скидання кольору
 # Завантаження та відображення логотипу
 bash <(curl -s https://raw.githubusercontent.com/Baryzhyk/nodes/refs/heads/main/logo.sh)
 
-# Анімація завантаження
+# Функція анімації
 animate_loading() {
-    for ((i = 1; i <= 5; i++)); do
-        printf "\r${GOLD}Завантажуємо меню${NC}."
-        sleep 0.3
-        printf "\r${GOLD}Завантажуємо меню${NC}.."
-        sleep 0.3
-        printf "\r${GOLD}Завантажуємо меню${NC}..."
-        sleep 0.3
-        printf "\r${GOLD}Завантажуємо меню${NC}"
-        sleep 0.3
+    while true; do
+        for dots in "." ".." "..."; do
+            printf "\r${GOLD}Завантажуємо меню${NC}${dots} "
+            sleep 0.3
+        done
     done
-    echo ""
+}
+
+# Запускаємо анімацію у фоновому режимі
+animate_loading &
+ANIM_PID=$!
+
+# Імітація завантаження (наприклад, 3 секунди)
+sleep 3
+
+# Зупиняємо анімацію
+kill $ANIM_PID >/dev/null 2>&1
+wait $ANIM_PID 2>/dev/null
+printf "\r${GOLD}Меню завантажено!${NC}     \n"
+
+# Меню вибору
+CHOICE=$(whiptail --title "Меню керування Aztec" \
+  --menu "Оберіть потрібну дію:" 20 70 9 \
+    "1" "Встановити vnc" \
+    "2" "Встановити вузол" \
+    "3" "Запустити вузол" \
+    "4" "Видалити вузол" \
+    "5" "Вийти з меню" \
+  3>&1 1>&2 2>&3)
+
+# Обробка вибору
+case $CHOICE in
+    1) echo "Встановлюємо VNC..." ;;
+    2) echo "Встановлюємо вузол..." ;;
+    3) echo "Запускаємо вузол..." ;;
+    4) echo "Видаляємо вузол..." ;;
+    5) echo "Вихід з меню..." ;;
+    *) echo "Невідомий вибір" ;;
+esac
 }
 
 # Меню вибору
