@@ -59,7 +59,6 @@ case $CHOICE in
     5) echo "Вихід з меню..." ;;
     *) echo "Невідомий вибір" ;;
 esac
-}
 
 # Меню вибору
 CHOICE=$(whiptail --title "Меню керування Aztec" \
