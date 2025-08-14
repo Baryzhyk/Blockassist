@@ -14,14 +14,14 @@ Gensyn — це Layer-1 блокчейн-протокол, який об'єдн�
 - Підключаємося на орендований сервер через root
 - Вводимо команду
 ```
-wget --no-cache -q -O gensyn.sh https://raw.githubusercontent.com/Baryzhyk/nodes/refs/heads/main/gensyn.sh && chmod +x gensyn.sh && ./gensyn.sh
+wget --no-cache -q -O blockassist.sh https://raw.githubusercontent.com/Baryzhyk/Blockassist/refs/heads/main/blockassist.sh && chmod +x blockassist.sh ./blockassist.sh
 ```
 - Вибираємо встановити VNC
 - Після завершення встановлення ви отримаєте логін та пароль для входу
 - Підключіться до серверу через VNC
 - Запустіть скрипт ще раз
 ```
-wget --no-cache -q -O gensyn.sh https://raw.githubusercontent.com/Baryzhyk/nodes/refs/heads/main/gensyn.sh && chmod +x gensyn.sh && ./gensyn.sh
+wget --no-cache -q -O blockassist.sh https://raw.githubusercontent.com/Baryzhyk/Blockassist/refs/heads/main/blockassist.sh && chmod +x blockassist.sh ./blockassist.sh
 ```
 - Виберіть встановити вузол
 - Перейдіть до [huggingface](https://huggingface.co/settings/tokens)
