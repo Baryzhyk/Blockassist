@@ -41,7 +41,7 @@ wait $ANIM_PID 2>/dev/null
 printf "\r${GOLD}Меню завантажено!${NC}     \n"
 
 # Меню вибору
-CHOICE=$(whiptail --title "Меню керування Aztec" \
+CHOICE=$(whiptail --title "Меню керування blockassist" \
   --menu "Оберіть потрібну дію:" 20 70 9 \
     "1" "Встановити vnc" \
     "2" "Встановити вузол" \
